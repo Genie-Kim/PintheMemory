@@ -24,8 +24,8 @@ Extensive experiments for semantic segmentation demonstrate the superior general
 ### Installation
 Clone this repository.
 ```
-git clone https://github.com/shachoi/RobustNet.git
-cd RobustNet
+git clone https://github.com/Genie-Kim/PintheMemory.git
+cd PintheMemory
 ```
 ### Installation Requirements
 ```
@@ -126,7 +126,7 @@ __C.DATASET.BDD_DIR = <YOUR_BDD_PATH>
 __C.DATASET.SYNTHIA_DIR = <YOUR_SYNTHIA_PATH>
 ```
 
-Training or evaluation scripts are coming soon!👋
+Training and evaluation scripts are coming soon!👋
 
 ## Acknowledgments
 Our implementation is heavily derived from [RobustNet](https://github.com/shachoi/RobustNet) and [TSMLDG](https://github.com/koncle/TSMLDG).
