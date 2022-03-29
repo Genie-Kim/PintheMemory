@@ -1,6 +1,6 @@
 ## PintheMemory (CVPR 2022): Official Project Webpage
 This repository provides the official PyTorch implementation of the following paper:
-> **PintheMemory:** Learning to Generalize Semantic Segmentation<br>
+> **Pin the Memory:** Learning to Generalize Semantic Segmentation<br>
 > Jin Kim (Yonsei Univ.), Jiyoung Lee (NAVER AI Lab), Jungin Park (Yonsei Univ.)<br>
 > Dongbo Min* (Ewha Womans Univ.), Kwanghoon Sohn* (Yonsei Univ.) (*: co-corresponding author)<br>
 > CVPR 2022, Accepted as Poster<br>
