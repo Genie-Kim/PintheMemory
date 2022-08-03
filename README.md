@@ -5,7 +5,7 @@ This repository provides the official PyTorch implementation of the following pa
 > Dongbo Min* (Ewha Womans Univ.), Kwanghoon Sohn* (Yonsei Univ.) (*: co-corresponding author)<br>
 > CVPR 2022, Accepted as Poster<br>
 
-> Paper: [arxiv]()<br>
+> Paper: [arxiv](https://arxiv.org/abs/2204.03609)<br>
 
 > **Abstract:** 
 *The rise of deep neural networks has led to several breakthroughs for semantic segmentation.
@@ -17,27 +17,45 @@ To this end, we also propose memory divergence and feature cohesion losses, whic
 Extensive experiments for semantic segmentation demonstrate the superior generalization capability of our method over state-of-the-art works on various benchmarks.*<br>
 
 <p align="center">
-  <img src="imgs/fig1.png" />
+  <img src="assets/fig1.png" width="500"/>
+</p>
+
+## Concept Video
+Click the figure to watch the video of our paper.
+
+<p align="center">
+  <a href="https://youtu.be/LlEdudHMLII"><img src="assets/fig2.png" alt="Youtube Video"></a><br>
 </p>
 
 ## Pytorch Implementation
-### Installation
-Clone this repository.
-```
-git clone https://github.com/Genie-Kim/PintheMemory.git
-cd PintheMemory
-```
+
 ### Installation Requirements
 ```
-python >= 3.7
+python >= 3.6
 Pytorch >= 1.9.0
 CUDA version >= 11.0
 Install dependencies
 pip install -r requirements.txt
 ```
 
+### Installation from Dockerfile
+Clone this repository.
+```
+git clone https://github.com/Genie-Kim/PintheMemory.git
+cd PintheMemory
+```
+Build docker image from Dockerfile
+```
+cd docker
+sudo docker build --tag pinmem:1.0 .
+```
+Run container
+```
+sudo docker run -it --gpus all -h pinmem --name pinmem -v <your workspace>/PintheMemory:/home/pinmem/PintheMemory -v <your datasetpath>/dg_seg_dataset:/home/pinmem/dg_seg_dataset -v <your workspace>/experiment_pinmem:/home/pinmem/experiment_pinmem --ipc=host pinmem:1.0 script -q -c "/bin/bash" /dev/null
+```
+
 ### How to Run
-We evaludated our method on [Cityscapes](https://www.cityscapes-dataset.com/), [Mapillary Vistas](https://www.mapillary.com/dataset/vistas?pKey=2ix3yvnjy9fwqdzwum3t9g&lat=20&lng=0&z=1.5), [BDD-100K](https://bair.berkeley.edu/blog/2018/05/30/bdd/),[Synthia](https://synthia-dataset.net/downloads/) ([SYNTHIA-RAND-CITYSCAPES](http://synthia-dataset.net/download/808/)), [GTAV](https://download.visinf.tu-darmstadt.de/data/from_games/)
+We evaludated our method on [Cityscapes](https://www.cityscapes-dataset.com/), [Mapillary Vistas](https://www.mapillary.com/dataset/vistas?pKey=2ix3yvnjy9fwqdzwum3t9g&lat=20&lng=0&z=1.5), [BDD-100K](https://bair.berkeley.edu/blog/2018/05/30/bdd/),[Synthia](https://synthia-dataset.net/downloads/) ([SYNTHIA-RAND-CITYSCAPES](http://synthia-dataset.net/download/808/)), [GTAV](https://download.visinf.tu-darmstadt.de/data/from_games/), [IDD](https://idd.insaan.iiit.ac.in/)
 
 1. For Cityscapes dataset, download "leftImg8bit_trainvaltest.zip" and "gtFine_trainvaltest.zip" from https://www.cityscapes-dataset.com/downloads/<br>
 ```
@@ -112,21 +130,23 @@ synthia
      └ val
 ```
 
-2. You should modify the path in **"config.py"** according to your dataset path.
+2. You should modify the dataset path to "~/dg_seg_dataset/".
 ```
-#Cityscapes Dir Location
-__C.DATASET.CITYSCAPES_DIR = <YOUR_CITYSCAPES_PATH>
-#Mapillary Dataset Dir Location
-__C.DATASET.MAPILLARY_DIR = <YOUR_MAPILLARY_PATH>
-#GTAV Dataset Dir Location
-__C.DATASET.GTAV_DIR = <YOUR_GTAV_PATH>
-#BDD-100K Dataset Dir Location
-__C.DATASET.BDD_DIR = <YOUR_BDD_PATH>
-#Synthia Dataset Dir Location
-__C.DATASET.SYNTHIA_DIR = <YOUR_SYNTHIA_PATH>
+datasetroot = os.path.expanduser('~/dg_seg_dataset/')
 ```
 
-Training and evaluation scripts are coming soon!👋
+### Pretrained Models
+#### All models trained for our paper
+You can download all models evaluated in our paper at [Google Drive](https://drive.google.com/drive/folders/19i1G-gcJ3BV_VxO0ZG9YMJ4Btyj8c6dM?usp=sharing)
+For compatibility with scripts file, put the folder downloaded from the drive in "PintheMemory/pretrained_model".
+
+### Train and Evaluation scripts
+Please refer to the train, evaluation, tsne plot and memory activation scripts in the PintheMemory/pinmem_xx_scripts folders.
+
+### T-sne plots
+<p align="center">
+  <img src="assets/tsneplot(GSCB).png" width="500"/>
+</p>
 
 ## Acknowledgments
 Our implementation is heavily derived from [RobustNet](https://github.com/shachoi/RobustNet) and [TSMLDG](https://github.com/koncle/TSMLDG).
