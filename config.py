@@ -50,7 +50,6 @@ __C.ITER = 0
 __C.EPOCH = 0
 
 __C.RANDOM_SEED = 304
-# __C.RANDOM_SEED = 123456
 # Use Class Uniform Sampling to give each class proper sampling
 __C.CLASS_UNIFORM_PCT = 0.0
 

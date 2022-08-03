@@ -547,7 +547,7 @@ class MemoryMetaFrameWork(object):
                 self.updated_net2.module.memory.m_items = mem_t  # memory sync
                 # freeze encoder
                 for k, v in self.updated_net2.named_parameters():
-                    if k.split(".")[1] is not 'memory':
+                    if k.split(".")[1] != 'memory':
                         v.detach_()
                         v.requires_grad_(False)
 

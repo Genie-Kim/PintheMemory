@@ -30,13 +30,7 @@ Click the figure to watch the video of our paper.
 ## Pytorch Implementation
 
 ### Installation Requirements
-```
-python >= 3.6
-Pytorch >= 1.9.0
-CUDA version >= 11.0
-Install dependencies
-pip install -r requirements.txt
-```
+Please refer to [environment.yml](environment.yml)
 
 ### Installation from Dockerfile
 Clone this repository.
@@ -51,7 +45,10 @@ sudo docker build --tag pinmem:1.0 .
 ```
 Run container
 ```
-sudo docker run -it --gpus all -h pinmem --name pinmem -v <your workspace>/PintheMemory:/home/pinmem/PintheMemory -v <your datasetpath>/dg_seg_dataset:/home/pinmem/dg_seg_dataset -v <your workspace>/experiment_pinmem:/home/pinmem/experiment_pinmem --ipc=host pinmem:1.0 script -q -c "/bin/bash" /dev/null
+sudo docker run -it --gpus all -h pinmem --name pinmem -v <your workspace>/PintheMemory:/root/PintheMemory -v <your datasetpath>/dg_seg_dataset:/root/dg_seg_dataset -v <your workspace>/experiment_pinmem:/root/experiment_pinmem --ipc=host pinmem:1.0 script -q -c "/bin/bash" /dev/null
+(in container)
+conda activate pinmem
+imageio_download_bin freeimage
 ```
 
 ### How to Run
@@ -137,11 +134,17 @@ datasetroot = os.path.expanduser('~/dg_seg_dataset/')
 
 ### Pretrained Models
 #### All models trained for our paper
-You can download all models evaluated in our paper at [Google Drive](https://drive.google.com/drive/folders/19i1G-gcJ3BV_VxO0ZG9YMJ4Btyj8c6dM?usp=sharing)
+You can download pretrined parameters evaluated in our paper at [Drive.](https://drive.google.com/drive/folders/1OmOQP4d6d7RCFRChw8gslGg9zt2Ahzc8?usp=sharing)
 For compatibility with scripts file, put the folder downloaded from the drive in "PintheMemory/pretrained_model".
 
 ### Train and Evaluation scripts
 Please refer to the train, evaluation, tsne plot and memory activation scripts in the PintheMemory/pinmem_xx_scripts folders.
+#### Usage Examples
+```
+./pinmem_eval_abla_scripts/eval_custumfolder_pinmem_DR50V3P.sh "<absolute path of any image folder>"
+```
+Then the qualitative result images saved in the same folder with pth snapshot file.
+For T-sne plot, install [tsnecuda](https://github.com/CannyLab/tsne-cuda) library.
 
 ### T-sne plots
 <p align="center">
