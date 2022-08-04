@@ -151,6 +151,17 @@ For T-sne plot, install [tsnecuda](https://github.com/CannyLab/tsne-cuda) librar
   <img src="assets/tsneplot(GSCB).png" width="500"/>
 </p>
 
+## Citations
+```
+@inproceedings{kim2022pin,
+  title={Pin the Memory: Learning to Generalize Semantic Segmentation},
+  author={Kim, Jin and Lee, Jiyoung and Park, Jungin and Min, Dongbo and Sohn, Kwanghoon},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={4350--4360},
+  year={2022}
+}
+```
+
 ## Acknowledgments
 Our implementation is heavily derived from [RobustNet](https://github.com/shachoi/RobustNet) and [TSMLDG](https://github.com/koncle/TSMLDG).
 Thanks to the RobustNet and TSMLDG implementations.
