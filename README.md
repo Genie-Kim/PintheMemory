@@ -134,7 +134,7 @@ datasetroot = os.path.expanduser('~/dg_seg_dataset/')
 
 ### Pretrained Models
 #### All models trained for our paper
-You can download pretrined parameters evaluated in our paper at [Drive.](https://drive.google.com/drive/folders/1OmOQP4d6d7RCFRChw8gslGg9zt2Ahzc8?usp=sharing)
+You can download pretrined parameters evaluated in our paper at [Drive.](https://drive.google.com/drive/folders/1AoU-R_1lcTXtGedb9U0Z2GfnG3hcgtb_?usp=sharing)
 For compatibility with scripts file, put the folder downloaded from the drive in "PintheMemory/pretrained_model".
 
 ### Train and Evaluation scripts
