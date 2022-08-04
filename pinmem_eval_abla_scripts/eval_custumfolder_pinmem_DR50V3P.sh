@@ -13,7 +13,7 @@ python eval.py --dataset video_folder \
         --scales 1.5 \
         --split val \
         --crop_size 640 \
-        --snapshot "pretrained_models/GSI_DR50V3P/ours/pinmem_GSI_DR50V3P.pth" \
+        --snapshot "pretrained_models/gta_synthia_idd_DR50V3P/ours/pinmem_GSI_DR50V3P.pth" \
         --dump_images \
         --exp pinmem \
         --arch network.deepv3plus.DeepR50V3PlusD \

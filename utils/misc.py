@@ -199,8 +199,7 @@ def evaluate_eval(args, net, optimizer, scheduler, val_loss, hist, dump_images, 
                 'scheduler': scheduler.state_dict(),
                 'scheduler_at': scheduler_at.state_dict(),
                 'epoch': epoch,
-                'mean_iu': mean_iu,
-                'command': ' '.join(sys.argv[1:])
+                'mean_iu': mean_iu
             }
 
         else:
@@ -209,8 +208,7 @@ def evaluate_eval(args, net, optimizer, scheduler, val_loss, hist, dump_images, 
                 'optimizer': optimizer.state_dict(),
                 'scheduler': scheduler.state_dict(),
                 'epoch': epoch,
-                'mean_iu': mean_iu,
-                'command': ' '.join(sys.argv[1:])
+                'mean_iu': mean_iu
             }
         if args.memory:
             savedict['memory'] = net.module.memory.m_items
